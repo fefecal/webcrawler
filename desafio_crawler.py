@@ -64,14 +64,14 @@ def log(data, x = 0):
 
 def boto():
     session = boto3.Session(
-        aws_access_key_id='AKIAJIVVRKW4LRWAZI5A',
-        aws_secret_access_key='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',
+        aws_access_key_id='Digite o Access ID',
+        aws_secret_access_key='Digite a chave secreta',
     )
     s3 = session.resource('s3')
     s3.upload_file('cotacao.csv', 'Bucket', 'cotacao.csv')
 
 def slack():
-    token = 'xoxb-406592957301-446000490982-9gtTksnLHRmGO3naumTfZXzu'
+    token = 'Faça seu token'
     slack_client = SlackClient(token)
     slack_client.api_call("chat.postMessage", channel="general", text="Foi feito o upload do arquivo cotacao.csv")
 
